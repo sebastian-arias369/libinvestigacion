@@ -97,3 +97,15 @@ int main() {
         asignarCursosASalas(cursos, salas);
 
         asignarCursosASalas(cursos, salas);
+
+        printf("Asignación de Cursos:\n");
+            for (int i = 0; i < NUM_CURSOS; i++) {
+                if (cursos[i].asignada) {
+                    printf("Curso %s -> Asignado a la %s desde las %d hasta %d \n", cursos[i].nombre, cursos[i].asignada_sala, cursos[i].horario_curso.inicio, cursos[i].horario_curso.fin);
+                } else {
+                    printf("Curso %s -> No asignado a ninguna sala\n", cursos[i].nombre);
+                }
+            }
+
+            return 0;
+        }
