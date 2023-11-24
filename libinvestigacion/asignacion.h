@@ -1,29 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-/* 
- * File:   asignacion.h
- * Author: Savab
- *
- * Created on 23 de noviembre de 2023, 11:21 p. m.
- */
+#define NUM_SALAS 6
+#define NUM_CURSOS 6
 
-#ifndef ASIGNACION_H
-#define ASIGNACION_H
+typedef struct Horario {
+    int inicio;
+    int fin;
+} Horario;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+typedef struct Sala {
+    char nombre[20];
+    char bloque[10];
+    int capacidad;
+    char tipo_aula[40];
+    Horario horario_asignado;
+} Sala;
 
+typedef struct Curso {
+    char nombre[20];
+    int num_estudiantes;
+    char profesor[30];
+    int asignada;
+    char asignada_sala[20];
+    Horario horario_curso;
+} Curso;
 
-
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* ASIGNACION_H */
-
+void asignarCursosASalas(Curso cursos[], Sala salas[]);
